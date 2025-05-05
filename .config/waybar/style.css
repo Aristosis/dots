@@ -1,0 +1,77 @@
+@import "mocha.css";
+
+* {
+    color: @text;
+    font-size: 14px;
+    font-family: 'Iosevka Aile';
+    border-radius: 0;
+    border: none;
+    min-height: 0;
+    /* font-family: 'JetBrains Mono'; */
+}
+
+window#waybar {
+    background: @base;
+}
+
+tooltip {
+  background: @base;
+  color: @text;
+  border: 1px solid @surface0;
+}
+
+#workspaces button {
+    min-width: 0;
+    min-height: 0;
+}
+#workspaces button.active {
+    background-color: @surface0;
+    font-weight: 900;
+    border-bottom: 2px solid @lavender;
+}
+
+
+#cpu, #memory, #mpris, #wireplumber, #language, #network, #bluetooth {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+#clock {
+    margin-right: 5px;
+    margin-left: 4px;
+}
+#mpris {
+    color: @subtext0;
+}
+#wireplumber {
+    background: rgba(166, 227, 161, 0.15);
+    border-bottom: 2px solid @green;
+}
+#bluetooth {
+    background: rgba(137, 180, 250, 0.15);
+    border-bottom: 2px solid @blue;
+}
+#network {
+    background: rgba(203, 166, 247, 0.15);
+    border-bottom: 2px solid @mauve;
+}
+
+window#waybar.empty #window {
+    padding: 0px;
+    border: 0px;
+    background-color: transparent;
+}
+
+#cpu.warm, #memory.warm {
+  color: @overlay0;
+  background-color: @yellow;
+}
+#cpu.hot, #memory.hot {
+  color: @overlay0;
+  background-color: @red;
+}
+#cpu.hiroshima, #memory.hiroshima {
+  color: @overlay0;
+  background-color: @maroon;
+}

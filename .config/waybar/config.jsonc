@@ -1,0 +1,149 @@
+{
+    "layer": "top",
+    "modules-left": ["hyprland/workspaces", "mpris"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["tray", "group/status", "bluetooth", "group/controls", "clock"],
+    // Sliders
+    "group/controls": {
+        "children-class": "controls",
+		"orientation": "inherit",
+        "modules": [
+            "backlight/slider",
+            "wireplumber"
+        ]
+    },
+
+    // Status Icons
+    "group/status": {
+        "children-class": "status",
+		"orientation": "inherit",
+        "modules": [
+            "battery",
+            "network",
+            "privacy"
+        ]
+    },
+
+    // System resource monitors
+	"group/resources": {
+        "children-class": "hardware",
+		"orientation": "horizontal",
+		"modules": [
+			"cpu",
+			"memory"
+		]
+	},
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip-format": "{timeTo}"
+    },
+    "network": {
+        "tooltip": false,
+        "format": "",
+        "format-wifi": "  ({signalStrength}%)",
+        "format-ethernet": "󰈁",
+        "format-disconnected": "󰈂",
+        "tooltip-format-disconnected": "Disconnected"
+    },
+    "bluetooth": {
+        "format-on": "󰂯 {num_connections}",
+        "tooltip-format": "{device_enumerate}",
+        "format-off": "󰂲"
+    },
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "tooltip": false,
+        "all-outputs": true,
+        "show-special": true
+    },
+    "hyprland/window": {
+        "ellipsis": " ",
+        "max-length": 40,
+        "icon": true,
+        "icon-size": 16
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": true,
+        "states": {
+            "warm": 65,
+            "hot": 80,
+            "hiroshima": 90
+        }
+    },
+    "memory": {
+        "format": " {}%",
+        "states": {
+            "warm": 65,
+            "hot": 80,
+            "hiroshima": 90
+        },
+        "tooltip": true,
+        "tooltip-format": "{used:0.1f}G/{total:0.1f}G"
+    },
+    "tray": {},
+    "mpris": {
+        "format": "{status_icon}  {title} - {artist}",
+        "artist-len": 20,
+        "title-len": 25,
+        "ellipsis": " ",
+        "status-icons": {
+            "paused": "",
+            "playing": "󰏤"
+        }
+    },
+    "wireplumber": {
+        "tooltip": false,
+        "format": "{icon}   {volume}%",
+        "format-muted": " ",
+        "on-click": "helvum",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ]
+        // "format-icons": [
+        //     " ",
+        //     " ",
+        //     " ",
+        //     " ",
+        //     " ",
+        //     " ",
+        //     " ",
+        //     " ",
+        //     " ",
+        //     " ",
+        //     " "
+        // ]
+    },
+    "clock": {
+        "format": "{:%I:%M%p}",
+        "format-alt": "{:%A, %B %d, %Y (%r)}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode"          : "month",
+            "mode-mon-col"  : 3,
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            "format": {
+                "months":     "<span color='#b4befe'><b>{}</b></span>",
+                "weekdays":   "<span color='#89b4fa'><b>{}</b></span>",
+                "days":       "<span color='#cdd6f4'>{}</span>",
+                "today":      "<span color='#f38ba8'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions":  {
+            "on-click-right": "mode",
+            "on-scroll-up": "tz_up",
+            "on-scroll-down": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    }
+}
