@@ -1,6 +1,5 @@
 export VISUAL=nvim
 export EDITOR=nvim
-eval "$(starship init zsh)"
 eval "$(zoxide init zsh --cmd cd)"
 
 source <(fzf --zsh)
