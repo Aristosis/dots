@@ -52,7 +52,7 @@ return {
 		{
 			"<leader>fc",
 			function() require("snacks").picker.files({ cwd = vim.fn.stdpath("config") }) end,
-			desc = "Find Config File",
+			desc = "Find Config Files",
 		},
 		{
 			"<leader>ff",
@@ -60,7 +60,7 @@ return {
 			desc = "Find Files",
 		},
 		{
-			"<leader>fg",
+			"<leader>fgf",
 			function() require("snacks").picker.git_files() end,
 			desc = "Find Git Files",
 		},
@@ -77,7 +77,7 @@ return {
 
 		-- git
 		{
-			"<leader>gb",
+			"<leader>fgb",
 			function() require("snacks").picker.git_branches() end,
 			desc = "Git Branches",
 		},
@@ -107,11 +107,6 @@ return {
 			desc = "Git Diff (Hunks)",
 		},
 		{
-			"<leader>gf",
-			function() require("snacks").picker.git_log_file() end,
-			desc = "Git Log File",
-		},
-		{
 			"<leader>gB",
 			function() require("snacks").gitbrowse() end,
 			desc = "Git Browse",
@@ -121,98 +116,94 @@ return {
 
 		-- Grep
 		{ --fs
-			"<leader>sg",
+			"<leader>fs",
 			function() require("snacks").picker.grep() end,
-			desc = "Grep",
+			desc = "Find string (grep)",
 		},
 		-- search
 		{ --f:
-			"<leader>s:",
+			"<leader>f:",
 			function() require("snacks").picker.commands() end,
 			desc = "Command History",
 		},
 		{ --fd
-			"<leader>sd",
+			"<leader>fd",
 			function() require("snacks").picker.diagnostics() end,
-			desc = "Diagnostics",
+			desc = "Find Diagnostics",
 		},
 		{ --fD
-			"<leader>sD",
+			"<leader>fD",
 			function() require("snacks").picker.diagnostics_buffer() end,
-			desc = "Buffer Diagnostics",
+			desc = "Find Buffer Diagnostics",
 		},
 		{ --fi
-			"<leader>si",
+			"<leader>fi",
 			function() require("snacks").picker.icons() end,
-			desc = "Icons",
+			desc = "Find Icons",
 		},
 
 		{ --fm
-			"<leader>sm",
+			"<leader>fm",
 			function() require("snacks").picker.marks() end,
-			desc = "Marks",
+			desc = "Find Marks",
 		},
 		{ --fj
-			"<leader>sj",
+			"<leader>fj",
 			function() require("snacks").picker.jumps() end,
-			desc = "Jumps",
+			desc = "Find Jumps",
 		},
-		{ --fl
-			"<leader>sl",
-			function() require("snacks").picker.loclist() end,
-			desc = "Location List",
-		},
-		{ --fq
-			"<leader>sq",
-			function() require("snacks").picker.qflist() end,
-			desc = "Quickfix List",
-		},
+		-- I dont actually use either of these features...
+		-- { --fl
+		-- 	"<leader>sl",
+		-- 	function() require("snacks").picker.loclist() end,
+		-- 	desc = "Location List",
+		-- },
+		-- { --fq
+		-- 	"<leader>fq",
+		-- 	function() require("snacks").picker.qflist() end,
+		-- 	desc = "Quickfix List",
+		-- },
 		-- { "<leader>sH", function() require('snacks').picker.highlights() end, desc = "Highlights" },
 
-		{
-			"<leader>f:",
-			function() require("snacks").picker.commands() end,
-			desc = "Commands",
-		},
 		{ --fk
-			"<leader>sk",
+			"<leader>fk",
 			function() require("snacks").picker.keymaps() end,
-			desc = "Keymaps",
+			desc = "Find Keymaps",
 		},
 		{ --ft
-			"<leader>uC",
+			"<leader>ft",
 			function() require("snacks").picker.colorschemes() end,
-			desc = "Colorschemes",
+			desc = "Find Colorschemes",
 		},
 		{ --f"
-			'<leader>s"',
+			'<leader>f"',
 			function() require("snacks").picker.registers() end,
-			desc = "Registers",
+			desc = "Find Registers",
 		},
 		-- { "<leader>sa", function() require('snacks').picker.autocmds() end, desc = "Autocmds" },
 
 		{ --fh
-			"<leader>sh",
+			"<leader>fh",
 			function() require("snacks").picker.help() end,
-			desc = "Help Pages",
+			desc = "Find Help Pages",
 		},
 		-- { "<leader>sM", function() require('snacks').picker.man() end, desc = "Man Pages" },
 		-- { "<leader>sp", function() require('snacks').picker.lazy() end, desc = "Search for Plugin Spec" },
-		{ --???
-			"<leader>sR",
-			function() require("snacks").picker.resume() end,
-			desc = "Resume",
-		},
-		{ --fu
+		-- { --??? ehh dont need it
+		-- 	"<leader>sR",
+		-- 	function() require("snacks").picker.resume() end,
+		-- 	desc = "Resume",
+		-- },
+		{ --fu largely useless, i need to learn how to use g+-
 			"<leader>su",
 			function() require("snacks").picker.undo() end,
-			desc = "Undo History",
+			desc = "Find Undos",
 		},
 		-- LSP
 		{
 			"gd",
 			function() require("snacks").picker.lsp_definitions() end,
-			desc = "Goto definitions",
+			desc = "Goto Definitions",
 		},
 		{
 			"gD",
@@ -223,7 +214,7 @@ return {
 			"gr",
 			function() require("snacks").picker.lsp_references() end,
 			nowait = true,
-			desc = "References",
+			desc = "Goto References",
 		},
 		{
 			"gy",
@@ -256,7 +247,6 @@ return {
 			function() require("snacks").notifier.hide() end,
 			desc = "Dismiss All Notifications",
 		},
-
 		{
 			"<c-/>",
 			function() require("snacks").terminal() end,
