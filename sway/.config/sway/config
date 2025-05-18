@@ -24,7 +24,7 @@
 set $mod Mod4
 
 # set default font
-font Iosevka-Medium:Monospace 11
+font Iosevka:Monospace 11
 
 # reload the configuration file
 bindsym $mod+Shift+r reload
@@ -39,7 +39,8 @@ set $right l
 default_border pixel 2
 
 # gaps settngs
-smart_gaps on
+# dont put gaps around only window - dont want this ngl
+# smart_gaps on
 gaps outer 1
 gaps inner 3
 
@@ -47,8 +48,8 @@ gaps inner 3
 floating_modifier $mod normal
 
 # set background
-# set $background /usr/share/backgrounds/default.png
-# output * bg $background fill
+set $background $HOME/Pictures/wall7.jpg
+output * bg $background fill
 
 
 ###############################################
@@ -60,6 +61,15 @@ input "1739:32693:SYNA2B38:00_06CB:7FB5_Touchpad" {
    tap enabled
    natural_scroll enabled
    middle_emulation enabled
+}
+
+input type:keyboard {
+    xkb_layout us(colemak),us
+    xkb_options grp:win_space_toggle
+}
+
+input type:pointer {
+    accel_profile flat
 }
 # get the names of your inputs by running: swaymsg -t get_inputs
 
@@ -145,7 +155,6 @@ bindsym $mod+Shift+4 move container to $ws4
 bindsym $mod+Shift+5 move container to $ws5
 bindsym $mod+Shift+6 move container to $ws6
 bindsym $mod+Shift+7 move container to $ws7
-bindsym $mod+Shift+7 move container to $ws7
 bindsym $mod+Shift+8 move container to $ws8
 bindsym $mod+Shift+9 move container to $ws9
 
@@ -189,7 +198,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+f fullscreen
 
 # toggle floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+f floating toggle
 
 # swap focus between the tiling area and the floating area
 bindsym $mod+space focus mode_toggle
@@ -232,9 +241,55 @@ bindsym $mod+Mod1+0 mode "$mode_system"
 
 
 ###############################################
-# => status bar
+# => colors and status bar
 ###############################################
+set $rosewater #f5e0dc
+set $flamingo #f2cdcd
+set $pink #f5c2e7
+set $mauve #cba6f7
+set $red #f38ba8
+set $maroon #eba0ac
+set $peach #fab387
+set $yellow #f9e2af
+set $green #a6e3a1
+set $teal #94e2d5
+set $sky #89dceb
+set $sapphire #74c7ec
+set $blue #89b4fa
+set $lavender #b4befe
+set $text #cdd6f4
+set $subtext1 #bac2de
+set $subtext0 #a6adc8
+set $overlay2 #9399b2
+set $overlay1 #7f849c
+set $overlay0 #6c7086
+set $surface2 #585b70
+set $surface1 #45475a
+set $surface0 #313244
+set $base #1e1e2e
+set $mantle #181825
+set $crust #11111b
+
+# target                 title     bg    text   indicator  border
+client.focused           $lavender $base $text  $rosewater $lavender
+client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $base
 bar {
+    colors {
+        background         $base
+        statusline         $text
+        focused_statusline $text
+        focused_separator  $base
+
+        # target           border bg        text
+        focused_workspace  $base  $mauve    $crust
+        active_workspace   $base  $surface2 $text
+        inactive_workspace $base  $base     $text
+        urgent_workspace   $base  $red      $crust
+    }
     swaybar_command waybar
     # position top
     # font "Iosevka 11"
@@ -243,7 +298,7 @@ bar {
     #
     # colors {
     #     statusline #ffffff
-    #     background #323232
+    #-     background #323232
     #                         #border    #background  #text
     #     focused_workspace   #32323200  #32323200    #ffffff
     #     inactive_workspace  #323232    #323232      #ffffff
@@ -263,6 +318,7 @@ bar {
 # for_window [app_id="gnome-calculator"] floating enable
 # for_window [app_id="gnome-calendar"] floating enable
 # for_window [app_id="eog"] floating enable
+for_window [app_id="firefox" title="^Picture-in-Picture$"] border none, floating enable
 
 
 ###############################################
@@ -280,4 +336,6 @@ bindsym $mod+Shift+0 move scratchpad
 bindsym $mod+0 scratchpad show
 
 #screenshot
-bindsym Print exec grim -g "$(slurp)" - | swappy -f - & notify-send "󰹑 Screenshot taken!"
+bindsym Print exec grim -g "$(slurp)" - | swappy -f -
+bindsym $mod+Shift+p sticky toggle
+#notify-send "󰹑 Screenshot taken!"

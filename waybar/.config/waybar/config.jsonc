@@ -1,7 +1,8 @@
 {
+    "height": 30,
     "layer": "top",
-    "modules-left": ["hyprland/workspaces", "mpris"],
-    "modules-center": ["hyprland/window"],
+    "modules-left": ["sway/workspaces", "mpris"],
+    "modules-center": ["sway/window"],
     "modules-right": ["tray", "group/status", "bluetooth", "group/controls", "clock"],
     // Sliders
     "group/controls": {
@@ -56,17 +57,17 @@
         "tooltip-format": "{device_enumerate}",
         "format-off": "󰂲"
     },
-    "hyprland/workspaces": {
+    "sway/workspaces": {
         "format": "{name}",
         "tooltip": false,
         "all-outputs": true,
         "show-special": true
     },
-    "hyprland/window": {
+    "sway/window": {
         "ellipsis": " ",
         "max-length": 40,
         "icon": true,
-        "icon-size": 16
+        "icon-size": 14
     },
     "cpu": {
         "format": " {usage}%",

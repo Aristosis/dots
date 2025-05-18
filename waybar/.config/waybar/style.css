@@ -2,7 +2,7 @@
 
 * {
     color: @text;
-    font-size: 14px;
+    font-size: 15px;
     font-family: 'Iosevka Aile';
     border-radius: 0;
     border: none;
@@ -23,8 +23,12 @@ tooltip {
 #workspaces button {
     min-width: 0;
     min-height: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
-#workspaces button.active {
+#workspaces button.focused {
     background-color: @surface0;
     font-weight: 900;
     border-bottom: 2px solid @lavender;
