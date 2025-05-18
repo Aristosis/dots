@@ -1,0 +1,283 @@
+###############################################
+# => sway config
+###############################################
+### default config is in /etc/sway/config
+### read `man 5 sway` for a complete reference
+
+### sections:
+#    * general
+#    * touchpad, volume and brightness keys
+#    * application keybindings
+#    * navigation
+#    * workspaces
+#    * layout and resizing
+#    * lockscreen and exiting sway
+#    * status bar
+#    * application rules
+#    * misc
+
+
+###############################################
+# => general
+###############################################
+# set mod key(mod4=super mod1=alt)
+set $mod Mod4
+
+# set default font
+font Iosevka-Medium:Monospace 11
+
+# reload the configuration file
+bindsym $mod+Shift+r reload
+
+# set vim keybinds
+set $left h
+set $down j
+set $up k
+set $right l
+
+# remove titlebar
+default_border pixel 2
+
+# gaps settngs
+smart_gaps on
+gaps outer 1
+gaps inner 3
+
+# mod + mouse to move/resize windows
+floating_modifier $mod normal
+
+# set background
+# set $background /usr/share/backgrounds/default.png
+# output * bg $background fill
+
+
+###############################################
+# => touchpad, volume and brightness keys
+###############################################
+# touchpad settings
+input "1739:32693:SYNA2B38:00_06CB:7FB5_Touchpad" {
+   dwt enabled
+   tap enabled
+   natural_scroll enabled
+   middle_emulation enabled
+}
+# get the names of your inputs by running: swaymsg -t get_inputs
+
+# volume keys
+bindsym XF86AudioMute exec pactl set-source-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%; exec notify-send "volume: $(amixer get Master|grep 'Left:'|awk -F '[][]' '{print $2}')"
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%; exec notify-send "volume: $(amixer get Master|grep 'Left:'|awk -F '[][]' '{print $2}')"
+
+# brightness keys
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+
+
+###############################################
+# => application keybindings
+###############################################
+# terminal
+set $term kitty
+bindsym $mod+Shift+Return exec $term
+
+# program launcher
+set $menu fuzzel
+bindsym $mod+Return exec $menu
+
+###############################################
+# => navigation
+###############################################
+# move focus (vim keys)
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# move focus (arrow keys)
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window (vim keys)
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+# move focused window (arrow keys)
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+
+###############################################
+# => workspaces
+###############################################
+# assign workspace
+set $ws1 workspace 1
+set $ws2 workspace 2
+set $ws3 workspace 3
+set $ws4 workspace 4
+set $ws5 workspace 5
+set $ws6 workspace 6
+set $ws7 workspace 7
+set $ws8 workspace 8
+set $ws9 workspace 9
+
+# switch to workspace
+bindsym $mod+1 $ws1
+bindsym $mod+2 $ws2
+bindsym $mod+3 $ws3
+bindsym $mod+4 $ws4
+bindsym $mod+5 $ws5
+bindsym $mod+6 $ws6
+bindsym $mod+7 $ws7
+bindsym $mod+8 $ws8
+bindsym $mod+9 $ws9
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to $ws1
+bindsym $mod+Shift+2 move container to $ws2
+bindsym $mod+Shift+3 move container to $ws3
+bindsym $mod+Shift+4 move container to $ws4
+bindsym $mod+Shift+5 move container to $ws5
+bindsym $mod+Shift+6 move container to $ws6
+bindsym $mod+Shift+7 move container to $ws7
+bindsym $mod+Shift+7 move container to $ws7
+bindsym $mod+Shift+8 move container to $ws8
+bindsym $mod+Shift+9 move container to $ws9
+
+
+###############################################
+# => window and layout controls
+###############################################
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# resize window
+mode "resize" {
+    # resize with vim keys
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    # resize with arrow keys
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    # return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# change split direction
+bindsym $mod+b splith; exec notify-send "vertical split"
+bindsym $mod+v splitv; exec notify-send "horizontal split"
+
+# switch layouts
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle fullscreen
+bindsym $mod+f fullscreen
+
+# toggle floating
+bindsym $mod+Shift+space floating toggle
+
+# swap focus between the tiling area and the floating area
+bindsym $mod+space focus mode_toggle
+
+# move focus to the parent container
+bindsym $mod+a focus parent
+
+
+###############################################
+# => lockscreen and exiting sway
+###############################################
+# lockscreen
+# set $locker swaylock -f -i $background --indicator-idle-visible
+# bindsym $mod+9 exec $locker
+#
+# # idle configuration
+# exec swayidle -w \
+#       timeout 300 $locker \
+#       timeout 600 'swaymsg "output * dpms off"' \
+#            resume 'swaymsg "output * dpms on"' \
+#       before-sleep $locker
+# # lock screen after 5 minutes of inactivity
+# # turn off display after another 5 minutes
+# # turn on display when resumed
+# # lock screen before sleep
+
+# exit sway
+set $mode_system system: (l) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec swaymsg exit, mode "default"
+    bindsym s exec systemctl suspend, mode "default"
+    bindsym r exec systemctl reboot, mode "default"
+    bindsym Shift+s exec systemctl poweroff -i, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Mod1+0 mode "$mode_system"
+
+
+###############################################
+# => status bar
+###############################################
+bar {
+    swaybar_command waybar
+    # position top
+    # font "Iosevka 11"
+    #
+    # status_command while echo $(date +'%b %d %H:%M | bat') $(cat /sys/class/power_supply/BAT1/capacity)%; do sleep 1; done
+    #
+    # colors {
+    #     statusline #ffffff
+    #     background #323232
+    #                         #border    #background  #text
+    #     focused_workspace   #32323200  #32323200    #ffffff
+    #     inactive_workspace  #323232    #323232      #ffffff
+    #     urgent_workspace    #900000    #900000      #ffffff
+    # }
+}
+
+
+###############################################
+# => application rules
+###############################################
+# assign applications to specific workspaces
+# assign [class="Firefox"] $ws1
+# assign [app_id="org.gnome.Nautilus"] $ws3
+
+# auto float certain applications
+# for_window [app_id="gnome-calculator"] floating enable
+# for_window [app_id="gnome-calendar"] floating enable
+# for_window [app_id="eog"] floating enable
+
+
+###############################################
+# => misc
+###############################################
+# autostart
+# notification daemon
+exec mako
+
+# scratchpad
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+0 move scratchpad
+# show/hide focused scratchpad window
+# cycle through multiple sratchpad windows
+bindsym $mod+0 scratchpad show
+
+#screenshot
+bindsym Print exec grim -g "$(slurp)" - | swappy -f - & notify-send "󰹑 Screenshot taken!"
