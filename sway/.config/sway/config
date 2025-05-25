@@ -48,9 +48,9 @@ gaps inner 3
 floating_modifier $mod normal
 
 # set background
-set $background $HOME/Pictures/wall7.jpg
-output * bg $background fill
-
+# set $background $HOME/Pictures/wall7.jpg
+# output * bg $background fill
+#
 
 ###############################################
 # => touchpad, volume and brightness keys
