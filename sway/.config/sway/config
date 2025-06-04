@@ -48,8 +48,8 @@ gaps inner 3
 floating_modifier $mod normal
 
 # set background
-# set $background $HOME/Pictures/wall7.jpg
-# output * bg $background fill
+set $background $HOME/Pictures/wall7.jpg
+output * bg $background fill
 #
 
 ###############################################
@@ -93,6 +93,10 @@ bindsym $mod+Shift+Return exec $term
 # program launcher
 set $menu fuzzel
 bindsym $mod+Return exec $menu
+
+# calculator
+bindsym $mod+Shift+C exec 'notify-send $(fuzzel -d --placeholder="Calculate..." -l 0 | bc -l 2>/dev/null)'
+# bindsym $mod+Alt+C exec 'kill $(ps -eo pid:6,comm --sort=comm | tail -n +2 | column -t | fuzzel -d -f "JetBrains Mono","Monospace" --placeholder="Kill process..." | awk '{print $1}')'
 
 ###############################################
 # => navigation

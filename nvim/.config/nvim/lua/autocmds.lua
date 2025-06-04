@@ -1,13 +1,28 @@
---[[
-Autocommands for core functionality are created here
-Plugin specific binds and autocmds are in or near their specs
-]]
 local autocmd = vim.api.nvim_create_autocmd
-local fn = vim.fn
+local highlight_augroup = vim.api.nvim_create_augroup('lsp-highlight', { clear = false })
 
+-- When cursor stops moving: Highlights all instances of the symbol under the cursor
+-- When cursor moves: Clears the highlighting
+autocmd({ 'CursorHold', 'CursorHoldI' }, {
+	group = highlight_augroup,
+	callback = vim.lsp.buf.document_highlight,
+})
+autocmd({ 'CursorMoved', 'CursorMovedI' }, {
+	group = highlight_augroup,
+	callback = vim.lsp.buf.clear_references,
+})
+
+-- When LSP detaches: Clears the highlighting
+autocmd('LspDetach', {
+	group = vim.api.nvim_create_augroup('lsp-detach', { clear = true }),
+	callback = function(event2)
+		vim.lsp.buf.clear_references()
+		vim.api.nvim_clear_autocmds { group = 'lsp-highlight', buffer = event2.buf }
+	end,
+})
+
+-- Highlight yank
 vim.api.nvim_create_augroup("Extras", { clear = true })
-
--- Highlight on yank
 autocmd("TextYankPost", {
 	group = "Extras",
 	pattern = "*",
@@ -16,28 +31,4 @@ autocmd("TextYankPost", {
 	end,
 })
 
--- Return to last edit location
-autocmd("BufReadPost", {
-	group = "Extras",
-	pattern = "*",
-	callback = function()
-		if fn.line("'\"") > 0 and fn.line("'\"") <= fn.line("$") then
-			fn.setpos(".", fn.getpos("'\""))
-			vim.cmd("normal! zz")
-			vim.cmd("silent! foldopen")
-		end
-	end,
-})
 
--- Trim leading whitespace on write
-autocmd("BufWritePre", {
-	group = "Extras",
-	pattern = "*",
-	callback = function()
-		if not vim.o.binary and vim.o.filetype ~= "diff" then
-			local current_view = fn.winsaveview()
-			vim.cmd([[keeppatterns %s/\s\+$//e]])
-			fn.winrestview(current_view)
-		end
-	end,
-})
