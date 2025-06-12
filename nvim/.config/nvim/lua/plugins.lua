@@ -1,7 +1,53 @@
 local key = vim.keymap.set
 local keyt = { noremap = true, silent = true }
 
+-- function to check if current project is standalone luau or for roblox
+local function rojo_project()
+  return vim.fs.root(0, function(name)
+    return name:match ".+%.project%.json$"
+  end)
+end
+
 local plugins = {
+	{
+		"lopi-py/luau-lsp.nvim",
+		opts = {
+			platform = {
+				type = rojo_project() and "roblox" or "standard",
+			},
+			types = {
+				roblox_security_level = "PluginSecurity",
+			},
+			sourcemap = {
+				enabled = true,
+				autogenerate = false,
+				rojo_project_file = "default.project.json",
+				sourcemap_file = "sourcemap.json",
+			},
+			plugin = {
+				enabled = true,
+				port = 3667,
+			},
+			fflags = {
+				enable_new_solver = true, -- enables the flags required for luau's new type solver
+			},
+			server = {
+				settings = {
+					['luau-lsp'] = {
+						completion = {
+							imports = {
+								ignoreGlobs = { "**/_Index/**" },
+								enabled = true
+							}
+						}
+					}
+				}
+			}
+		},
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+	},
 	{
 		"kylechui/nvim-surround",
 		version = "^3.0.0", -- Use for stability; omit to use `main` branch for the latest features
@@ -166,9 +212,6 @@ local plugins = {
 		lazy = false,
 		branch = 'main',
 		build = ':TSUpdate'
-	},
-	{
-		'tpope/vim-sleuth'
 	},
 	{
 		'windwp/nvim-autopairs',

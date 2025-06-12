@@ -1,6 +1,7 @@
 -- Enabling lsps
 vim.lsp.enable {
-	"lua_ls"
+	"lua_ls",
+	"zls"
 }
 
 --[[
