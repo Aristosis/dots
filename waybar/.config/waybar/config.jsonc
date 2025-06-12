@@ -3,7 +3,7 @@
     "layer": "top",
     "modules-left": ["sway/workspaces", "mpris"],
     "modules-center": ["sway/window"],
-    "modules-right": ["tray", "group/status", "bluetooth", "group/controls", "clock"],
+    "modules-right": ["tray", "privacy", "group/status", "bluetooth", "group/controls", "clock"],
     // Sliders
     "group/controls": {
         "children-class": "controls",
@@ -21,7 +21,6 @@
         "modules": [
             "battery",
             "network",
-            "privacy"
         ]
     },
 
