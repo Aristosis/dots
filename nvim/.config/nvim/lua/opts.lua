@@ -17,6 +17,7 @@ o.undofile = true                -- Persistent undo history
 o.updatetime = 250               -- Update time relied upon by key sequences n stuff
 o.timeoutlen = 300               -- Take this long te leave me the fuck alone
 o.backspace = "indent,eol,start" -- Make backspace work properly over everything
+o.swapfile = false               -- Disable annoying swapfile errors
 
 -- UI
 o.number = true

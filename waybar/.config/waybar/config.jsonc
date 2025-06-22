@@ -102,7 +102,7 @@
         "tooltip": false,
         "format": "{icon}   {volume}%",
         "format-muted": " ",
-        "on-click": "helvum",
+        "on-click": "pwvucontrol",
         "format-icons": [
             "",
             "",
