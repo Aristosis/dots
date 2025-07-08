@@ -59,8 +59,11 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} ma=1\;38
 
 # Use eza if it exists
-command -v eza >/dev/null && alias ls='eza --icons --group-directories-first'
-command -v bat >/dev/null && alias cat='bat -pp' && export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
+# command -v eza >/dev/null && alias ls='eza --icons --group-directories-first'
+# command -v bat >/dev/null && alias cat='bat -pp' && export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
+#
+alias ls='eza --icons --group-directories-first'
+alias cat='bat -pp' && export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 
 setopt auto_param_slash # Add / after autocompleting directory
 setopt interactive_comments # Allow comments in shell
