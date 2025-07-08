@@ -28,7 +28,7 @@ tooltip {
     padding-top: 3px;
     padding-bottom: 3px;
 }
-#workspaces button.focused {
+#workspaces button.active {
     background-color: @surface0;
     font-weight: 900;
     border-bottom: 2px solid @lavender;

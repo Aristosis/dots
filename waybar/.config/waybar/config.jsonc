@@ -1,8 +1,8 @@
 {
     "height": 30,
     "layer": "top",
-    "modules-left": ["sway/workspaces", "mpris"],
-    "modules-center": ["sway/window"],
+    "modules-left": ["hyprland/workspaces", "mpris"],
+    "modules-center": ["hyprland/window"],
     "modules-right": ["tray", "privacy", "group/status", "bluetooth", "group/controls", "clock"],
     // Sliders
     "group/controls": {

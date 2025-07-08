@@ -310,7 +310,7 @@ local plugins = {
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		lazy = false,
 		config = function()
-			key("n", "<leader>o", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+			key("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 			require('oil').setup {
 				-- default_file_explorer = true,
 			}
