@@ -5,7 +5,6 @@ HISTCONTROL=ignoreboth
 
 export EDITOR="nvim"
 export VISUAL="nvim"
-export PROTONPATH="$HOME/.config/heroic/tools/proton/GE-Proton-latest"
 
 # Configure commands
 export BAT_THEME="Catppuccin Mocha"

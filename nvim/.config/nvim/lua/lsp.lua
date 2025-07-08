@@ -24,7 +24,7 @@ local s = vim.diagnostic.severity
 vim.diagnostic.config {
 	severity_sort = true,
 	float = {
-		border = "rounded",
+		border = "single",
 		source = true
 	},
 	virtual_text = {
