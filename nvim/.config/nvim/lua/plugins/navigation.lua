@@ -70,7 +70,6 @@ return {
 			key("n", "<leader>fD", fzf.diagnostics_workspace, keyt)
 
 			key("n", '<leader>f"', fzf.registers, keyt)
-			key("n", '<leader>fm"', fzf.registers, keyt)
 		end,
 		opts = {
 			winopts = {
