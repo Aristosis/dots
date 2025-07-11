@@ -6,9 +6,10 @@ local function rojo_project()
 end
 
 return {
-	-- vim-polyglot
+	-- guess-indent
 	{
-		"sheerun/vim-polyglot",
+		"nmac427/guess-indent.nvim",
+		opts = {},
 	},
 
 	-- nvim-surround
