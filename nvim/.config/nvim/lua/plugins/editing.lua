@@ -6,6 +6,13 @@ local function rojo_project()
 end
 
 return {
+	-- Better comments
+	{
+		"folke/ts-comments.nvim",
+		event = "VeryLazy",
+		opts = {},
+	},
+
 	-- guess-indent
 	{
 		"nmac427/guess-indent.nvim",
@@ -17,11 +24,12 @@ return {
 		"kylechui/nvim-surround",
 		version = "^3.0.0", -- Use for stability; omit to use `main` branch for the latest features
 		event = "VeryLazy",
-		config = function()
-			require("nvim-surround").setup({
-				-- Configuration here, or leave empty to use defaults
-			})
-		end,
+		opts = {},
+		-- config = function()
+		-- 	require("nvim-surround").setup({
+		-- 		-- Configuration here, or leave empty to use defaults
+		-- 	})
+		-- end,
 	},
 
 	-- nvim-autopairs
@@ -65,17 +73,29 @@ return {
 
 	-- treesitter
 	{
-		"nvim-treesitter/nvim-treesitter",
-		lazy = false,
-		branch = "main",
-		build = ":TSUpdate",
-		opts = {
-			ensure_installed = {
-				"lua",
-				"vim",
-				"vimdoc",
-				"markdown",
-				"markdown-inline",
+		{
+			{
+				"nvim-treesitter/nvim-treesitter",
+				lazy = false,
+				branch = "main",
+				build = ":TSUpdate",
+				opts = {
+					ensure_installed = {
+						"lua",
+						"vim",
+						"vimdoc",
+						"markdown",
+						"markdown-inline",
+					},
+				},
+			},
+			{
+				"windwp/nvim-ts-autotag",
+				opts = {},
+			},
+			{
+				"nvim-treesitter/nvim-treesitter-context",
+				opts = { mode = "cursor", max_lines = 1 },
 			},
 		},
 	},
@@ -118,6 +138,19 @@ return {
 		},
 		dependencies = {
 			"nvim-lua/plenary.nvim",
+		},
+	},
+
+	-- lazydev
+	{
+		"folke/lazydev.nvim",
+		ft = "lua",
+		cmd = "LazyDev",
+		opts = {
+			library = {
+				{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
+				{ path = "lazy.nvim", words = { "LazyVim" } },
+			},
 		},
 	},
 
@@ -216,5 +249,11 @@ return {
 			},
 			fuzzy = { implementation = "prefer_rust_with_warning" },
 		},
+	},
+
+	-- Render Markdown
+	{
+		"MeanderingProgrammer/render-markdown.nvim",
+		opts = {},
 	},
 }

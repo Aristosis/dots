@@ -2,6 +2,8 @@ local plugins = {
 	require("plugins.editing"),
 	require("plugins.navigation"),
 	require("plugins.visual"),
+	require("plugins.theme"),
+	require("plugins.tools"),
 }
 
 --[[
@@ -38,4 +40,3 @@ require("lazy").setup({
 	},
 })
 vim.cmd.colorscheme("catppuccin-mocha")
-
