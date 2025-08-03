@@ -1,4 +1,7 @@
 require('opts')
+require('keymaps')
 require('autocmds')
-require('lsp')
+
+vim.loader.enable()
+
 require('plugins')

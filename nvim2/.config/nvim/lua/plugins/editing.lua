@@ -13,6 +13,9 @@ return {
 		opts = true,
 	},
 	{
+		"https://github.com/neovim/nvim-lspconfig",
+	},
+	{
 		"stevearc/conform.nvim",
 		event = "VeryLazy",
 		opts = {
@@ -47,19 +50,8 @@ return {
 				port = 3667,
 			},
 			fflags = {
-				enable_new_solver = true, -- enables the flags required for luau's new type solver
+				enable_new_solver = true,
 			},
-			settings = {
-				["luau-lsp"] = {
-					completion = {
-						imports = {
-							ignoreGlobs = { "**/_Index/**" },
-							enabled = true,
-						},
-					},
-				},
-			},
-			server = {},
 		},
 		dependencies = {
 			"nvim-lua/plenary.nvim",
@@ -67,7 +59,7 @@ return {
 	},
 	{
 		"folke/lazydev.nvim",
-		ft = "lua",
+		event = "VeryLazy",
 		cmd = "LazyDev",
 		opts = {
 			library = {

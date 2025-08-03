@@ -1,8 +1,10 @@
 local plugins = {
-	require("plugins.navigation"),
-	require("plugins.editing"),
-	require("plugins.treesitter"),
-	require("plugins.visual"),
+	-- require("plugins.navigation"),
+	-- require("plugins.editing"),
+	-- require("plugins.treesitter"),
+	-- require("plugins.visual"),
+	-- require("")
+	{ 'echasnovski/mini.nvim', version = false },
 }
 
 --[[

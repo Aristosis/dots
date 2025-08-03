@@ -9,7 +9,7 @@ return {
 				blink_cmp = true,
 				fzf = true,
 				gitsigns = true,
-				indent_blankline = { enabled = true },
+				-- indent_blankline = { enabled = true },
 				lsp_trouble = true,
 				markdown = true,
 				native_lsp = {
@@ -149,7 +149,8 @@ return {
 	},
 	{
 		"MeanderingProgrammer/render-markdown.nvim",
-		ft = "md",
-		opts = true,
+		event = "VeryLazy",
+		-- ft = "md",
+		opts = {},
 	},
 }

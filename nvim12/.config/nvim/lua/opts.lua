@@ -1,3 +1,10 @@
+vim.lsp.enable({
+	"pyright",
+	"lua_ls",
+	"tsserver",
+})
+vim.diagnostic.config({ virtual_text = true })
+
 vim.opt.title = true
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
@@ -21,7 +28,7 @@ vim.opt.undofile = true
 vim.opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
 vim.opt.undolevels = 10000
 vim.opt.virtualedit = "block"
-vim.opt.completeopt = "menu,menuone,popup,noselect,fuzzy"
+vim.opt.completeopt = "menu,menuone,popup,noinsert,fuzzy"
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
 vim.opt.list = true
@@ -38,7 +45,6 @@ vim.opt.wrap = false
 vim.opt.conceallevel = 2
 vim.opt.foldlevel = 99
 vim.opt.inccommand = "nosplit"
-vim.g.markdown_recommended_style = 0
 vim.opt.cursorline = true
 vim.opt.showmode = true
 vim.opt.pumblend = 5
@@ -55,12 +61,6 @@ vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 
 vim.g.netrw_banner = false
-vim.g.netrw_browse_split = 4
+vim.g.netrw_browse_split = 0
 vim.g.netrw_altv = true
 vim.g.netrw_liststyle = 3
-
-vim.lsp.enable({
-	"pyright",
-	"gopls",
-	"vtsls",
-})
