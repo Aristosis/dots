@@ -1,4 +1,5 @@
 vim.lsp.enable({
+	"rust_analyzer",
 	"pyright",
 	"lua_ls",
 	"tsserver",

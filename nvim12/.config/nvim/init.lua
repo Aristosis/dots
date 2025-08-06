@@ -1,4 +1,5 @@
 require("opts")
+
 require("keymaps")
 require("autocmds")
 
@@ -6,6 +7,7 @@ vim.loader.enable(true)
 vim.pack.add({
 	{ src = "https://github.com/Saghen/blink.cmp", version = "v1.*" },
 	{ src = "https://github.com/catppuccin/nvim" },
+	{ src = "https://github.com/chentoast/marks.nvim" },
 	{ src = "https://github.com/echasnovski/mini.nvim", version = "main" },
 	{ src = "https://github.com/ibhagwan/fzf-lua" },
 	{ src = "https://github.com/lopi-py/luau-lsp.nvim" },
@@ -20,6 +22,7 @@ vim.pack.add({
 vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.o.foldmethod = "expr"
 
+require("marks").setup()
 require("conform").setup({
 	format_on_save = {
 		timeout_ms = 500,
