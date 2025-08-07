@@ -3,6 +3,7 @@ vim.lsp.enable({
 	"pyright",
 	"lua_ls",
 	"tsserver",
+	"zls",
 })
 vim.diagnostic.config({ virtual_text = true })
 

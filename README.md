@@ -1,0 +1,26 @@
+# Packages
+7z
+bat
+du-dust
+eza
+fd
+fuzzel
+fzf
+hyprland
+hyprshot
+ly
+mako
+mpd
+neovim
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+ripgrep
+stow
+ttf-nerd-fonts-symbols
+ueberzugpp
+yazi
+zellij
+zoxide
+zsh
+zsh-syntax-highlighting

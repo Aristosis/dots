@@ -58,10 +58,6 @@ ZSH_HIGHLIGHT_STYLES[cursor]='fg=#cdd6f4'
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} ma=1\;38
 
-# Use eza if it exists
-# command -v eza >/dev/null && alias ls='eza --icons --group-directories-first'
-# command -v bat >/dev/null && alias cat='bat -pp' && export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
-#
 alias ls='eza --icons --group-directories-first'
 alias cat='bat -pp' && export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 
@@ -76,6 +72,8 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # aliases
 alias v="nvim"
 alias dlp='yt-dlp --extract-audio --audio-format best --embed-metadata --embed-thumbnail --audio-quality 0 -o "%(artist)s - %(track)s.%(ext)s"'
+alias find="fd"
+alias grep="rg"
 
 setopt prompt_subst # Allow usage of variables in prompt
 
@@ -88,5 +86,5 @@ git_prompt() {
 
 NEWLINE=$'\n'
 precmd() {
-  PROMPT="${NEWLINE}%F{#cdd6f4}%K{#313244} %n %(?..%F{#f38ba8}[%?]%f)%K{#1e1e2e}$(git_prompt)%K{#11111b}  %~ %f%k${NEWLINE}❯ "
+	PROMPT="${NEWLINE}%F{#cdd6f4}%K{#313244} %n %(?..%F{#f38ba8}[%?]%f)%K{#1e1e2e}$(git_prompt)%K{#11111b}  %~ %f%k${NEWLINE} "
 }
