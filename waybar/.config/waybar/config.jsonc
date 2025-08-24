@@ -3,7 +3,7 @@
     "layer": "top",
     "modules-left": ["hyprland/workspaces", "mpris"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["tray", "privacy", "group/status", "bluetooth", "group/controls", "clock"],
+    "modules-right": ["tray", "privacy", "group/status", "group/controls", "clock"],
     // Sliders
     "group/controls": {
         "children-class": "controls",
