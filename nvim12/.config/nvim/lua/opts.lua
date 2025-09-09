@@ -5,7 +5,15 @@ vim.lsp.enable({
 	"rust_analyzer",
 	"tsserver",
 	"zls",
+	"spyglassmc_language_server",
 })
+
+vim.filetype.add({
+	pattern = {
+		[".*%.mcfunction"] = "mcfunction",
+	},
+})
+
 vim.diagnostic.config({ virtual_text = true })
 
 vim.opt.title = true
