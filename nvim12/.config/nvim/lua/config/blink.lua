@@ -2,6 +2,7 @@ return {
 	fuzzy = {
 		prebuilt_binaries = { force_version = "v1.6.0" },
 	},
+	signature = { enabled = true },
 	completion = {
 		menu = {
 			draw = {

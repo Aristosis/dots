@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Value=1.0
+Type=Application
+Name=Prism Launcher
+GenericName=Prism Launcher
+Comment=Prism Launcher
+Icon=/home/ari/AppImages/.icons/Prism Launcher.svg
+Exec="/home/ari/AppImages/PrismLauncher-Linux-x86_64.AppImage"
+Categories=Game;
+Path=/home/ari/AppImages/
+

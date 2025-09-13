@@ -14,12 +14,17 @@ bindkey -e
 
 source ~/.ls_colors
 
+# aliases
+alias v="nvim"
+alias dlp='yt-dlp --extract-audio --audio-format best --embed-metadata --embed-thumbnail --audio-quality 0 -o "%(artist)s - %(track)s.%(ext)s"'
+alias ls='eza --group-directories-first'
+
 zstyle ':completion:*' menu no
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} ma=1\;38
 zstyle ':completion:*:descriptions' format '[%d]'
 zstyle ':fzf-tab:*' switch-group '<' '>'
 zstyle ':fzf-tab:*' use-fzf-default-opts yes
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color=always -1 $realpath'
 
 
 # Plugins
@@ -29,10 +34,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/fzf-tab-git/fzf-tab.zsh
 
-# aliases
-alias v="nvim"
-alias dlp='yt-dlp --extract-audio --audio-format best --embed-metadata --embed-thumbnail --audio-quality 0 -o "%(artist)s - %(track)s.%(ext)s"'
-alias ls='eza'
 
 setopt prompt_subst
 
