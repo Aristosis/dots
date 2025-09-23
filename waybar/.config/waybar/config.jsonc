@@ -56,14 +56,14 @@
         "tooltip-format": "{device_enumerate}",
         "format-off": "󰂲"
     },
-    "sway/workspaces": {
+    "hyprland/workspaces": {
         "format": "{name}",
         "tooltip": false,
         "all-outputs": true,
-        "show-special": true
+        "show-special": false
     },
-    "sway/window": {
-        "ellipsis": " ",
+    "hyprland/window": {
+        "ellipsis": "…",
         "max-length": 40,
         "icon": true,
         "icon-size": 14
@@ -89,13 +89,13 @@
     },
     "tray": {},
     "mpris": {
-        "format": "{status_icon}  {title} - {artist}",
+        "format": "{status_icon} ｜ {title} - {artist}",
         "artist-len": 20,
-        "title-len": 25,
-        "ellipsis": " ",
+        "title-len": 15,
+        "ellipsis": "…",
         "status-icons": {
-            "paused": "",
-            "playing": "󰏤"
+            "paused": "",
+            "playing": ""
         }
     },
     "wireplumber": {

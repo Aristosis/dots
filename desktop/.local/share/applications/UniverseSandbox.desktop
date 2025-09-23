@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Value=1.0
+Type=Application
+Name=Universe Sandbox
+GenericName=Universe Sandbox
+Comment=Universe Sandbox
+# Icon=
+Exec=/home/ari/HDD/Games/scripts/UniverseSandbox.sh
+Categories=Game;
+Path=/home/ari/HDD/Games/Universe Sandbox/
+
