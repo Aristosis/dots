@@ -3,7 +3,7 @@
     "layer": "top",
     "modules-left": ["hyprland/workspaces", "mpris"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["tray", "privacy", "group/status", "group/controls", "clock"],
+    "modules-right": [ "group/resources", "tray", "privacy", "group/status", "group/controls", "clock"],
     // Sliders
     "group/controls": {
         "children-class": "controls",
@@ -20,7 +20,7 @@
 		"orientation": "inherit",
         "modules": [
             "battery",
-            "network",
+            "network"
         ]
     },
 
@@ -44,7 +44,7 @@
         "tooltip-format": "{timeTo}"
     },
     "network": {
-        "tooltip": false,
+        "tooltip": true,
         "format": "",
         "format-wifi": "  ({signalStrength}%)",
         "format-ethernet": "󰈁",
@@ -66,7 +66,7 @@
         "ellipsis": "…",
         "max-length": 40,
         "icon": true,
-        "icon-size": 14
+        "icon-size": 16
     },
     "cpu": {
         "format": " {usage}%",
@@ -78,7 +78,7 @@
         }
     },
     "memory": {
-        "format": " {}%",
+        "format": "M:{}%",
         "states": {
             "warm": 65,
             "hot": 80,
@@ -100,7 +100,7 @@
     },
     "wireplumber": {
         "tooltip": false,
-        "format": "{icon}   {volume}%",
+        "format": "{icon} {volume}%",
         "format-muted": " ",
         "on-click": "pwvucontrol",
         "format-icons": [

@@ -9,7 +9,7 @@ files = subprocess.check_output(
 pretty_names = {os.path.splitext(os.path.basename(f))[0]: f for f in files}
 
 fuzzel = subprocess.Popen(
-    ["fuzzel", "--dmenu", "--width=40"],
+    ["fuzzel", "--dmenu", "--width=60", "--lines=20"],
     stdin=subprocess.PIPE,
     stdout=subprocess.PIPE,
 )

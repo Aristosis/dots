@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Value=1.0
+Type=Application
+Name=Tony Hawk's Pro Skater 1 + 2
+GenericName=Tony Hawk's Pro Skater 1 + 2
+Comment=Tony Hawk's Pro Skater 1 + 2
+# Icon=/home/ari/HDD/Games/scripts/ULTRAKILL.png
+Exec=/home/ari/HDD/Games/scripts/THPS.sh
+Categories=Game;
+Path=/home/ari/HDD/Games/Tony Hawk's Pro Skater 1 + 2/
+

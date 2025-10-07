@@ -17,7 +17,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export LESSHISTFILE="$XDG_CACHE_HOME/less_history"
 
 export QT_QPA_PLATFORMTHEME=qt5ct
-export QT_STYLE_OVERRIDE=Adwaita-Dark
+# export QT_STYLE_OVERRIDE=qt5ct
 
 export PATH="$HOME/.cache/.bun/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
