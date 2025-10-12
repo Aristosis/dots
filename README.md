@@ -8,6 +8,27 @@ Good luck using them as if they were ready to use configs
 
 You `git clone https://github.com/aristosis/dots` (i also have these on https://git.gay i think lol), then you stow the files or copy them
 
+## Core system setup
+
+### Audio
+Base setup:
+- [PipeWire (Arch Wiki)](https://wiki.archlinux.org/title/PipeWire)
+- [WirePlumber](https://wiki.archlinux.org/title/WirePlumber)
+- `pipewire-pulse`, `pipewire-alsa`, `pipewire-jack`. Not familiar with the last package, but its safe to have it
+
+```sh
+systemctl --user enable --now PipeWire.service`
+systemctl --user enable --now WirePlumber.service`
+```
+
+- `alsa-utils` comes with `amixer`, needed for audio adjustment in `rmpc`
+- `mpd` service has to be enabled as a USER (`systemctl enable --user mpd.service`)
+- `pwvucontrol` from the *AUR* GUI for PipeWire. Pavucontrol still works fine with `pipewire-pulse` tho
+
+### Networking / Internet
+[NetworkManager (Arch Wiki)](https://wiki.archlinux.org/title/NetworkManager) is far more convenient to use than
+systemd-networkd for me. You just `systemctl enable NetworkManager.service --now` and it just works
+
 
 ## Story time
 **Reference:** Current PC is a corporate HP tower. 5 year old quad core APU (Ryzen 3 2200G) and a SATA SSD. Snappy system with satisfactory visuals. I have a 1 terabyte HDD I mount at my home directory to store all my games and media. My only storage concerns are with packages because they always install on root.

@@ -25,16 +25,7 @@ vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.o.foldmethod = "expr"
 
 require("marks").setup()
-require("conform").setup({
-	format_on_save = {
-		timeout_ms = 500,
-		lsp_format = "fallback",
-	},
-	formatters_by_ft = {
-		lua = { "stylua" },
-	},
-	notify_no_formatters = false,
-})
+require("conform").setup(require("config.conform"))
 
 require("treesitter-context").setup({ mode = "cursor", max_lines = 1 })
 require("mini.cursorword").setup()
