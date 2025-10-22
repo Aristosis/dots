@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Value=1.0
+Type=Application
+Name=Tekken 7
+GenericName=Tekken 7
+Comment=Tekken 7
+# Icon=/home/ari/HDD/Games/scripts/ULTRAKILL.png
+Exec=/home/ari/HDD/Games/scripts/Tekken7.sh
+Categories=Game;
+Path=/home/ari/HDD/Games/TEKKEN 7/
+

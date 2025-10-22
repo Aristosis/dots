@@ -1,8 +1,9 @@
 {
     "height": 30,
+	"position": "bottom",
     "layer": "top",
-    "modules-left": ["hyprland/workspaces", "mpris"],
-    "modules-center": ["hyprland/window"],
+    "modules-left": ["niri/workspaces", "mpris"],
+    "modules-center": ["niri/window"],
     "modules-right": [ "tray", "privacy", "group/status", "group/controls", "clock"],
     // Sliders
     "group/controls": {
@@ -58,13 +59,13 @@
         "tooltip-format": "{device_enumerate}",
         "format-off": "󰂲"
     },
-    "hyprland/workspaces": {
-        "format": "{name}",
+    "niri/workspaces": {
+        // "format": "{name}",
         "tooltip": false,
         "all-outputs": true,
         "show-special": false
     },
-    "hyprland/window": {
+    "niri/window": {
         "ellipsis": "…",
         "max-length": 40,
         "icon": true,

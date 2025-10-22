@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Value=1.0
+Type=Application
+Name=Rebel Inc.
+GenericName=Rebel Inc.
+Comment=Rebel Inc.
+# Icon=/home/ari/HDD/Games/scripts/ULTRAKILL.png
+Exec=/home/ari/HDD/Games/scripts/RebelInc.sh
+Categories=Game;
+Path=/home/ari/HDD/Games/RebelInc/
+

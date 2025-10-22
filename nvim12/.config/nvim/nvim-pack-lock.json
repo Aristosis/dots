@@ -1,0 +1,24 @@
+{
+  "plugins": {
+    "blink.cmp": {
+      "version": "'v1.*'"
+    },
+    "conform.nvim": [],
+    "fzf-lua": [],
+    "luau-lsp.nvim": [],
+    "marks.nvim": [],
+    "mini.nvim": {
+      "version": "'main'"
+    },
+    "nabla.nvim": [],
+    "nvim": [],
+    "nvim-lspconfig": [],
+    "nvim-treesitter": {
+      "version": "'main'"
+    },
+    "nvim-treesitter-context": [],
+    "oil.nvim": [],
+    "plenary.nvim": [],
+    "render-markdown.nvim": []
+  }
+}
