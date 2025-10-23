@@ -8,6 +8,10 @@ environment {
 
 prefer-no-csd
 
+output "DP-1" {
+	scale 1
+}
+
 // https://yalter.github.io/niri/Configuration:-Input
 input {
     keyboard {

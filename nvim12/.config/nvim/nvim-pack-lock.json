@@ -5,6 +5,10 @@
     },
     "conform.nvim": [],
     "fzf-lua": [],
+    "grapple.nvim": {
+      "rev": "b41ddfc",
+      "src": "https://github.com/cbochs/grapple.nvim"
+    },
     "luau-lsp.nvim": [],
     "marks.nvim": [],
     "mini.nvim": {
@@ -17,6 +21,10 @@
       "version": "'main'"
     },
     "nvim-treesitter-context": [],
+    "nvim-web-devicons": {
+      "rev": "b8221e4",
+      "src": "https://github.com/nvim-tree/nvim-web-devicons"
+    },
     "oil.nvim": [],
     "plenary.nvim": [],
     "render-markdown.nvim": []
