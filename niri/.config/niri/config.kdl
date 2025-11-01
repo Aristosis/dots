@@ -1,7 +1,7 @@
 screenshot-path "~/HDD/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 spawn-at-startup "waybar"
-spawn-at-startup "sh -c swaybg -i ~/Pictures/wall.jpeg"
-spawn-at-startup "wl-paste --watch cliphist store"
+spawn-sh-at-startup "swaybg -i ~/Pictures/wall.jpeg"
+spawn-sh-at-startup "wl-paste --watch cliphist store"
 
 environment {
     ELECTRON_OZONE_PLATFORM_HINT "auto"
