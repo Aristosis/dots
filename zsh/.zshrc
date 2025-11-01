@@ -9,6 +9,7 @@ setopt sharehistory
 setopt hist_ignore_space
 setopt hist_save_no_dups
 setopt auto_param_slash
+setopt correct
 
 bindkey -e
 
@@ -17,7 +18,7 @@ source ~/.ls_colors
 # aliases
 alias v="nvim"
 alias dlp='yt-dlp --extract-audio --audio-format best --embed-metadata --embed-thumbnail --audio-quality 0 -o "%(artist)s - %(track)s.%(ext)s"'
-alias ls='eza --group-directories-first'
+alias ls='eza --icons --group-directories-first'
 
 zstyle ':completion:*' menu no
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} ma=1\;38

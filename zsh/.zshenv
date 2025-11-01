@@ -3,6 +3,7 @@ export VISUAL="nvim"
 
 # Configure commands
 export BAT_THEME="Catppuccin Mocha"
+export FZF_CTRL_T_OPTS="--preview 'bat {} --color=always --decorations=never'"
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,spinner:#F5E0DC,hl:#F38BA8 \
 --color=fg:#CDD6F4,header:#F38BA8,info:#CBA6F7,pointer:#F5E0DC \
@@ -22,4 +23,5 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 export PATH="$HOME/.cache/.bun/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.rokit/bin:$PATH"
+
 # export PATH="$HOME/.pesde/bin:$PATH"
