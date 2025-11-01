@@ -6,8 +6,8 @@
     "conform.nvim": [],
     "fzf-lua": [],
     "grapple.nvim": {
-      "rev": "b41ddfc",
-      "src": "https://github.com/cbochs/grapple.nvim"
+      "rev": "55b5586",
+      "src": "https://github.com/aristosis/grapple.nvim"
     },
     "luau-lsp.nvim": [],
     "marks.nvim": [],

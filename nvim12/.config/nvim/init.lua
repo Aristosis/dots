@@ -10,7 +10,7 @@ vim.pack.add({
 
 	{ src = "https://github.com/stevearc/oil.nvim" },
 	{ src = "https://github.com/Saghen/blink.cmp", version = "v1.*" },
-	{ src = "https://github.com/cbochs/grapple.nvim" },
+	{ src = "https://github.com/aristosis/grapple.nvim" },
 	{ src = "https://github.com/mini-nvim/mini.nvim", version = "main" },
 	{ src = "https://github.com/ibhagwan/fzf-lua" },
 	{ src = "https://github.com/stevearc/conform.nvim" },
@@ -25,7 +25,6 @@ vim.pack.add({
 
 vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.o.foldmethod = "expr"
-
 
 require("treesitter-context").setup({ mode = "cursor", max_lines = 1 })
 

@@ -5,7 +5,9 @@ vim.lsp.enable({
 	"rust_analyzer",
 	"tsserver",
 	"zls",
+	"gopls",
 	"spyglassmc_language_server",
+	"gdscript",
 })
 
 vim.filetype.add({
