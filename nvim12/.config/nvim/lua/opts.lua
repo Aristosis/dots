@@ -16,7 +16,7 @@ vim.filetype.add({
 	},
 })
 
-vim.diagnostic.config({ virtual_text = true })
+vim.diagnostic.config({ virtual_text = false })
 
 vim.opt.title = true
 vim.g.mapleader = " "

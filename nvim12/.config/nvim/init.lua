@@ -7,6 +7,7 @@ vim.pack.add({
 	{ src = "https://github.com/catppuccin/nvim" },
 	{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
 	{ src = "https://github.com/nvim-tree/nvim-web-devicons" },
+	{ src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim" },
 
 	{ src = "https://github.com/stevearc/oil.nvim" },
 	{ src = "https://github.com/Saghen/blink.cmp", version = "v1.*" },
@@ -41,6 +42,8 @@ require("mini.ai").setup()
 require("mini.pairs").setup()
 require("mini.splitjoin").setup()
 require("mini.sessions").setup()
+
+require("tiny-inline-diagnostic").setup(require("config.tiny-inline-diagnostic"))
 
 require("oil").setup(require("config.oil"))
 require("luau-lsp").setup(require("config.luau-lsp"))

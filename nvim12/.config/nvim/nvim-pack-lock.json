@@ -27,6 +27,10 @@
     },
     "oil.nvim": [],
     "plenary.nvim": [],
-    "render-markdown.nvim": []
+    "render-markdown.nvim": [],
+    "tiny-inline-diagnostic.nvim": {
+      "rev": "994c13d",
+      "src": "https://github.com/rachartier/tiny-inline-diagnostic.nvim"
+    }
   }
 }
