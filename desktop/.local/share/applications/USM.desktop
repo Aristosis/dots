@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Value=1.0
+Type=Application
+Name=Ultimate Spider-Man
+GenericName=Ultimate Spider-Man
+Comment=Ultimate Spider-Man
+Icon=/home/ari/HDD/Games/scripts/USM.png
+Exec=/home/ari/HDD/Games/scripts/USM.sh
+Categories=Game;
+Path=/home/ari/HDD/Games/USM/Ultimate Spider-Man/
+
