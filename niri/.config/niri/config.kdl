@@ -1,6 +1,7 @@
 screenshot-path "~/HDD/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 spawn-at-startup "waybar"
-spawn-at-startup "swaybg -i ~/Pictures/wall.jpeg"
+spawn-at-startup "sh -c swaybg -i ~/Pictures/wall.jpeg"
+spawn-at-startup "wl-paste --watch cliphist store"
 
 environment {
     ELECTRON_OZONE_PLATFORM_HINT "auto"
@@ -35,7 +36,7 @@ input {
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
 	background-color "transparent"
-    gaps 2
+    gaps 5
     center-focused-column "never"
 
 	insert-hint {
@@ -93,7 +94,7 @@ animations { }
 
 binds {
     Mod+Shift+Q      repeat=false { close-window; }
-    Mod+Shift+Return repeat=false hotkey-overlay-title="Open a terminal" { spawn "ghostty"; }
+    Mod+Shift+Return repeat=false hotkey-overlay-title="Open a terminal" { spawn "kitty"; }
     Mod+Return       repeat=false hotkey-overlay-title="Run an application" { spawn "fuzzel"; }
     Mod+B            repeat=false hotkey-overlay-title="Run Librewolf" { spawn "librewolf"; }
 
@@ -278,7 +279,7 @@ binds {
 // WINDOW RULES
 // floating PIP
 window-rule {
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id=r#"librewolf$"# title="^Picture-in-Picture$"
     open-floating true
 }
 
